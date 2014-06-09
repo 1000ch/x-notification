@@ -13,6 +13,20 @@
 </x-notification>
 ```
 
+## Install
+
+Using `npm`
+
+```sh
+$ npm install x-notification
+```
+
+Using `bower`
+
+```sh
+$ bower install x-notification
+```
+
 ## Usage
 
 Import `x-notification.html`.
