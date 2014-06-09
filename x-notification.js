@@ -20,26 +20,13 @@ XNotificationPrototype.attachedCallback = function () {
     icon: this.getAttribute('icon')
   };
 
-  this.delay = this.getAttribute('delay');
-  this.timeout = this.getAttribute('timeout');
+  this.delay = Number(this.getAttribute('delay')) || 0;
+  this.timeout = Number(this.getAttribute('timeout')) || 0;
+  this.autoshow = this.hasAttribute('autoshow');
 
-  if (this.delay) {
-    this.delay -= 0;
-  } else {
-    this.delay = 0;
+  if (this.autoshow) {
+    this.show();
   }
-  setTimeout(function () {
-    this.showNotification();
-  }.bind(this), this.delay);
-
-  if (this.timeout) {
-    this.timeout -= 0;
-  } else {
-    this.timeout = 0;
-  }
-  setTimeout(function () {
-    this.closeNotification();
-  }.bind(this), this.timeout);
 };
 
 XNotificationPrototype.detachedCallback = function () {
@@ -50,13 +37,29 @@ XNotificationPrototype.detachedCallback = function () {
 
 XNotificationPrototype.attributeChangedCallback = function (attributeName, oldValue, newValue) {};
 
-XNotificationPrototype.showNotification = function () {
-  this.notification = new Notification(this.title, this.options);
+XNotificationPrototype.show = function () {
+  var that = this;
+  this.delayTimerId = setTimeout(function () {
+    that.notification = new Notification(that.title, that.options);
+    that.timeoutTimerId = setTimeout(function () {
+      that.close();
+    }, that.timeout);
+  }, that.delay);
 };
 
-XNotificationPrototype.closeNotification = function () {
+XNotificationPrototype.close = function () {
   if (this.notification) {
     this.notification.close();
+  }
+  this.disposeTimer();
+};
+
+XNotificationPrototype.disposeTimer = function () {
+  if (this.delayTimerId) {
+    clearTimeout(this.delayTimerId);
+  }
+  if (this.timeoutTimerId) {
+    clearTimeout(this.timeoutTimerId);
   }
 };
 
