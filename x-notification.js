@@ -11,6 +11,7 @@ XNotificationPrototype.createdCallback = function () {
 };
 
 XNotificationPrototype.attachedCallback = function () {
+
   this.title = this.getAttribute('title');
   this.options = {
     dir: this.getAttribute('dir'),
@@ -23,6 +24,11 @@ XNotificationPrototype.attachedCallback = function () {
   this.delay = Number(this.getAttribute('delay')) || 0;
   this.timeout = Number(this.getAttribute('timeout')) || 0;
   this.autoshow = this.hasAttribute('autoshow');
+
+  this.onclick = this.getAttribute('onclick') ? new Function(this.getAttribute('onclick')) : this.noop;
+  this.onshow = this.getAttribute('onshow') ? new Function(this.getAttribute('onshow')) : this.noop;
+  this.onerror = this.getAttribute('onerror') ? new Function(this.getAttribute('onerror')) : this.noop;
+  this.onclose = this.getAttribute('onclose') ? new Function(this.getAttribute('onclose')) : this.noop;
 
   if (this.autoshow) {
     this.show();
@@ -41,6 +47,10 @@ XNotificationPrototype.show = function () {
   var that = this;
   this.delayTimerId = setTimeout(function () {
     that.notification = new Notification(that.title, that.options);
+    that.notification.onclick = that.onclick;
+    that.notification.onshow = that.onshow;
+    that.notification.onerror = that.onerror;
+    that.notification.onclose = that.onclose;
     that.timeoutTimerId = setTimeout(function () {
       that.close();
     }, that.timeout);
@@ -62,6 +72,8 @@ XNotificationPrototype.disposeTimer = function () {
     clearTimeout(this.timeoutTimerId);
   }
 };
+
+XNotificationPrototype.noop = function () {};
 
 var XNotification = document.registerElement('x-notification', {
   prototype: XNotificationPrototype

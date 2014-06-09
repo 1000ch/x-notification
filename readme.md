@@ -24,36 +24,58 @@ document.querySelector('x-notification').show();
 
 ## Attributes
 
-### Title (String)
+### `title=<String>`
 
 **This is a required option** . This will be set as notification title.
 
-### dir
+### `dir=<String>`
 
 The direction of the notification.
 It can be **auto** , **ltr** , or **rtl** .
 
-### lang
+### `lang=<String>`
 
 Specify the language used within the notification.
 
-### body
+### `body=<String>`
 
 A string representing an extra content to display within the notification.
 
-### tag
+### `tag=<String>`
 
 An ID for a given notification that allows to retrieve, replace or remove it if necessary.
 
-### icon
+### `icon=<String>`
 
 The URL of an image to be used as an icon by the notification.
 
-### delay
+### `delay=<Number>`
 
-### timeout
+Delay for timing to show notification.
 
-### autoshow
+### `timeout=<Number>`
+
+Timeout for timing to close notification automatically.
+
+### `autoshow`
+
+If you add this attribute, notification will be shown automatically.
+
+### `onclick=<Function>`
+
+A handler for the `click` event. It is triggered each time the user clicks on the notification.
+
+### `onshow=<Function>`
+
+A handler for the `show` event. It is triggered when the notification is displayed.
+
+### `onerror=<Function>`
+
+A handler for the `error` event. It is triggered each time the notification encounters an error.
+
+### `onclose=<Function>`
+
+A handler for the `close` event. It is triggered when the user closes the notification.
 
 ## License
 
