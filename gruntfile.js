@@ -11,17 +11,9 @@ module.exports = function (grunt) {
           src: ['<%=jshint.all%>']
         }
       }
-    },
-    jshint: {
-      options: {
-        node: true,
-        globalstrict: true
-      },
-      all: ['x-notification.js']
     }
   });
 
   grunt.loadNpmTasks('grunt-jsvalidate');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('test', ['jshint', 'jsvalidate']);
+  grunt.registerTask('test', ['jsvalidate']);
 };

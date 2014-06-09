@@ -1,6 +1,6 @@
 'use strict';
 
-window.Notification = window.Notification || window.webkitNotification;
+var Notification = window.Notification || window.webkitNotification || window.mozNotification;
 var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
 XNotificationPrototype.createdCallback = function () {
@@ -58,7 +58,7 @@ XNotificationPrototype.show = function () {
     that.notification.onshow = that.onshow;
     that.notification.onerror = that.onerror;
     that.notification.onclose = that.onclose;
-    that.timeoutTimerId = setTimeout(function () {
+    that.timeoutTimerId = window.setTimeout(function () {
       that.close();
     }, that.timeout);
   }, that.delay);
@@ -73,10 +73,10 @@ XNotificationPrototype.close = function () {
 
 XNotificationPrototype.disposeTimer = function () {
   if (this.delayTimerId) {
-    clearTimeout(this.delayTimerId);
+    window.clearTimeout(this.delayTimerId);
   }
   if (this.timeoutTimerId) {
-    clearTimeout(this.timeoutTimerId);
+    window.clearTimeout(this.timeoutTimerId);
   }
 };
 
