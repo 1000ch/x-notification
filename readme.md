@@ -1,5 +1,18 @@
 # `<x-notification>`
 
+## Example
+
+```html
+<x-notification
+  autoshow
+  title='Notification Title'
+  delay='0'
+  timeout='3000'
+  tag='tag'>
+  Notification body
+</x-notification>
+```
+
 ## Usage
 
 Import `x-notification.html`.

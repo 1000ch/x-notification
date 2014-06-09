@@ -1,3 +1,6 @@
+'use strict';
+
+window.Notification = window.Notification || window.webkitNotification;
 var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
 XNotificationPrototype.createdCallback = function () {
@@ -12,7 +15,7 @@ XNotificationPrototype.createdCallback = function () {
 
 XNotificationPrototype.attachedCallback = function () {
 
-  this.title = this.getAttribute('title');
+  this.title = this.getAttribute('title'); 
   this.options = {
     dir: this.getAttribute('dir'),
     lang: this.getAttribute('lang'),
@@ -20,6 +23,10 @@ XNotificationPrototype.attachedCallback = function () {
     tag: this.getAttribute('tag'),
     icon: this.getAttribute('icon')
   };
+
+  if (['auto', 'ltr', 'rtl'].indexOf(this.options.dir) === -1) {
+    this.options.dir = 'auto';
+  }
 
   this.delay = Number(this.getAttribute('delay')) || 0;
   this.timeout = Number(this.getAttribute('timeout')) || 0;

@@ -1,0 +1,32 @@
+{
+  "name": "x-notification",
+  "version": "0.1.0",
+  "description": "Extended Notification as Web Components",
+  "main": "x-notification.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/x-notification.git"
+  },
+  "keywords": [
+    "WebComponents"
+  ],
+  "author": {
+    "name": "1000ch",
+    "email": "shogo.sensui@gmail.com",
+    "web": "http://github.com/1000ch"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1000ch/x-notification/issues"
+  },
+  "homepage": "https://github.com/1000ch/x-notification",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jsvalidate": "^0.2.2"
+  }
+}
