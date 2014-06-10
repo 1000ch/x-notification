@@ -58,9 +58,11 @@ XNotificationPrototype.show = function () {
     that.notification.onshow = that.onshow;
     that.notification.onerror = that.onerror;
     that.notification.onclose = that.onclose;
-    that.timeoutTimerId = window.setTimeout(function () {
-      that.close();
-    }, that.timeout);
+    if (that.timeout !== 0) { 
+      that.timeoutTimerId = window.setTimeout(function () {
+        that.close();
+      }, that.timeout);
+    }
   }, that.delay);
 };
 
