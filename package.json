@@ -1,9 +1,9 @@
 {
   "name": "x-notification",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Browser Notifications as Web Components.",
-  "main": "x-notification.js",
   "scripts": {
+    "start": "python -m http.server",
     "test": "./node_modules/testem/testem.js -l PhantomJS ci"
   },
   "repository": {
