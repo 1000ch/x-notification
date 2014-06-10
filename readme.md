@@ -1,27 +1,18 @@
 # `<x-notification>`
 
-## Example
+## About
 
-```html
-<x-notification
-  autoshow
-  title='Notification Title'
-  delay='0'
-  timeout='3000'
-  tag='tag'>
-  Notification body
-</x-notification>
-```
+Browser Notifications as Web Components.
 
 ## Install
 
-Using `npm`
+Using [npm](https://www.npmjs.org/package/x-notification):
 
 ```sh
 $ npm install x-notification
 ```
 
-Using `bower`
+Using [bower](http://bower.io/search/?q=x-notification):
 
 ```sh
 $ bower install x-notification
@@ -38,7 +29,12 @@ Import `x-notification.html`.
 After import, put `<x-notification>` tag.
 
 ```html
-<x-notification autoshow title='Notification Title' delay='1000' timeout='3000' tag='tag'>Notification body</x-notification>
+<x-notification
+  autoshow
+  title='Notification Title'
+  delay='1000'
+  timeout='3000'
+  tag='tag'>Notification body</x-notification>
 ```
 
 If you set `autoshow` attribute, a notification will be shown automatically.
