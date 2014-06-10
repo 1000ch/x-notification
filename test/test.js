@@ -1,3 +1,3 @@
-describe('XNotification', function () {
-  
-});
+var expect = chai.expect;
+
+describe('XNotification', function () {});
