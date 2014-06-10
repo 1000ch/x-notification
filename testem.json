@@ -1,0 +1,15 @@
+{
+  "test_page": "test/index.mustache",
+  "framework": [
+    "node_modules/mocha/mocha.js"
+  ],
+  "dev_dependencies": [
+    "node_modules/chai/chai.js",
+    "node_modules/sinon/pkg/sinon.js"
+  ],
+  "serve_files": [
+    "test/*.js"
+  ],
+  "launch_in_dev": ["PhantomJS"],
+  "launch_in_ci": ["PhantomJS"]
+}

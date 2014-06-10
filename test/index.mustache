@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>XNotification test</title>
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+    {{#framework}}
+      <script src="/{{.}}"></script>
+    {{/framework}}
+    <script src="/testem.js"></script>
+    <script>mocha.setup('bdd');</script>
+    {{#dev_dependencies}}
+      <script src="/{{.}}"></script>
+    {{/dev_dependencies}}
+    {{#serve_files}}
+      <script src="/{{src}}"></script>
+    {{/serve_files}}
+  </head>
+  <body></body>
+</html>

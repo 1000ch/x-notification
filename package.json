@@ -1,17 +1,18 @@
 {
   "name": "x-notification",
   "version": "0.1.1",
-  "description": "Extended Notification as Web Components",
+  "description": "Browser Notifications as Web Components.",
   "main": "x-notification.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/testem/testem.js -l PhantomJS ci"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/x-notification.git"
   },
   "keywords": [
-    "WebComponents"
+    "WebComponents",
+    "Notification"
   ],
   "author": {
     "name": "1000ch",
@@ -24,8 +25,9 @@
   },
   "homepage": "https://github.com/1000ch/x-notification",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-jsvalidate": "^0.2.2"
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "sinon": "^1.10.2",
+    "testem": "^0.6.16"
   }
 }
