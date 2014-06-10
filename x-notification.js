@@ -1,5 +1,9 @@
 'use strict';
 
+if (!document.registerElement) {
+  throw new Error('Browser does not support document.registerElement');
+}
+
 var Notification = window.Notification || window.webkitNotification || window.mozNotification;
 var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
