@@ -15,7 +15,7 @@ window.XNotification = (function () {
 
   // fix Notification object
   var Notification = window.Notification || window.webkitNotification || window.mozNotification;
-  var XNotificationPrototype = Object.create(HTMLUnknownElement.prototype);
+  var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
   // Check the permission for browser notification
   XNotificationPrototype.createdCallback = function () {
