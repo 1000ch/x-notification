@@ -1,0 +1,30 @@
+{
+  "name": "x-notification",
+  "version": "0.2.1",
+  "homepage": "https://github.com/1000ch/x-notification",
+  "authors": [
+    "1000ch <shogo.sensui@gmail.com>"
+  ],
+  "description": "Browser Notifications as Web Components.",
+  "main": "x-notification.html",
+  "keywords": [
+    "notification"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "platform": "Polymer/platform#~0.3.3",
+    "polymer": "Polymer/polymer#~0.3.3",
+    "paper-shadow": "Polymer/paper-shadow#~0.3.3",
+    "paper-input": "Polymer/paper-input#~0.3.3",
+    "paper-radio-group": "Polymer/paper-radio-group#~0.3.3",
+    "paper-button": "Polymer/paper-button#~0.3.3"
+  }
+}
