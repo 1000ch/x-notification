@@ -9,11 +9,12 @@
 
     <script src="bower_components/platform/platform.js"></script>
 
-    <link href="bower_components/paper-input/paper-input.html" rel="import">
-    <link href="bower_components/paper-radio-group/paper-radio-group.html" rel="import">
-    <link href="bower_components/paper-button/paper-button.html" rel="import">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
 
-    <link href="x-notification.html" rel="import">
+    <link rel="import" href="x-notification.html">
+    <link rel="import" href="x-notification-editor.html">
 
     <style>
       column {
@@ -40,6 +41,7 @@
   <body>
     <column>
       <h1>x-notification</h1>
+      <p>Declarative Browser Notification as Web Components.</p>
       <section>
         <h2>Autoshow Example</h2>
         <pre>&lt;x-notification autoshow title=&#039;Hello!&#039; delay=&#039;0&#039; timeout=&#039;3000&#039;&gt;
@@ -53,68 +55,9 @@
       </section>
       <section>
         <h2>Customize Example</h2>
-        <div>
-          <paper-input label="Title" id="title"></paper-input>
-        </div>
-        <div>
-          <paper-radio-group selected="1" id="dir">
-            <paper-radio-button label="Auto" value="auto"></paper-radio-button><br>
-            <paper-radio-button label="Left to Right" value="ltr"></paper-radio-button><br>
-            <paper-radio-button label="Right to Left" value="rtl"></paper-radio-button>
-          </paper-radio-group>
-        </div>
-        <div>
-          <paper-input id="lang" label="Language"></paper-input>
-        </div>
-        <div>
-          <paper-input id="body" label="Body"></paper-input>
-        </div>
-        <div>
-          <paper-input id="delay" label="Delay" validate="^[0-9]*$" error="Input is not a number!"></paper-input>
-        </div>
-        <div>
-          <paper-input id="timeout" label="Timeout" validate="^[0-9]*$" error="Input is not a number!"></paper-input>
-        </div>
-        <paper-button id="show-notification" class="colored" label="Custom notification"></paper-button>
-        <x-notification id='custom-notification' title='Hello!'></x-notification>
+        <x-notification-editor></x-notification-editor>
       </section>
     </column>
     <a href="https://github.com/1000ch/x-notification"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-    <script>
-      document.addEventListener('polymer-ready', function () {
-
-        var customNotification = document.getElementById('custom-notification');
-        
-        document.getElementById('title').addEventListener('change', function onTitleChange(e) {
-          customNotification.setAttribute('title', e.target.value);
-        });
-        
-        document.getElementById('dir').addEventListener('change', function onDirectionChange(e) {
-          if (e.target.checked) {
-            customNotification.setAttribute('dir', e.target.getAttribute('value'));
-          }
-        });
-
-        document.getElementById('lang').addEventListener('change', function onLanguageChange(e) {
-          customNotification.setAttribute('lang', e.target.value);
-        });
-
-        document.getElementById('body').addEventListener('change', function onBodyChange(e) {
-          customNotification.textContent = e.target.value;
-        });
-
-        document.getElementById('delay').addEventListener('change', function onDelayChange(e) {
-          customNotification.setAttribute('delay', e.target.value);
-        });
-
-        document.getElementById('timeout').addEventListener('change', function onTimeoutChange(e) {
-          customNotification.setAttribute('timeout', e.target.value);
-        });
-        
-        document.getElementById('show-notification').addEventListener('click', function () {
-          customNotification.show();
-        });
-      });
-    </script>
   </body>
 </html>
