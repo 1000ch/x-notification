@@ -19,36 +19,26 @@
     </style>
 
     <!-- target notification -->
-    <x-notification id='notification' title="{{title}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
+    <x-notification id='notification' title="{{title}}" dir="{{dir}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
 
     <!-- tag state -->
-    <pre>&lt;x-notification id=&#039;custom-notification&#039; title=&#039;{{title}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
+    <pre>&lt;x-notification id=&#039;custom-notification&#039; dir=&#039;{{dir}}&#039; title=&#039;{{title}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
   {{body}}
 &lt;/x-notification&gt;</pre>
     
     <!-- x-notification editor -->
+    <div><paper-input label="Title" value="{{title}}"></paper-input></div>
     <div>
-      <paper-input label="Title" value="{{title}}"></paper-input>
-    </div>
-    <div>
-      <paper-radio-group id="dir" selected="1" on-change="{{onDirectionChanged}}">
+      <paper-radio-group id="dir" dir="{{dir}}" selected="1" on-change="{{onDirectionChanged}}">
         <paper-radio-button label="Auto" value="auto"></paper-radio-button><br>
         <paper-radio-button label="Left to Right" value="ltr"></paper-radio-button><br>
         <paper-radio-button label="Right to Left" value="rtl"></paper-radio-button>
       </paper-radio-group>
     </div>
-    <div>
-      <paper-input label="Language" value="{{lang}}"></paper-input>
-    </div>
-    <div>
-      <paper-input label="Body" value="{{body}}"></paper-input>
-    </div>
-    <div>
-      <paper-input label="Delay" value="{{delay}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input>
-    </div>
-    <div>
-      <paper-input label="Timeout" value="{{timeout}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input>
-    </div>
+    <div><paper-input label="Language" value="{{lang}}"></paper-input></div>
+    <div><paper-input label="Body" value="{{body}}"></paper-input></div>
+    <div><paper-input label="Delay" value="{{delay}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
+    <div><paper-input label="Timeout" value="{{timeout}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
     <paper-button on-click="{{showNotification}}" label="Custom notification" style="color: #4285f4; fill:#4285f4;"></paper-button>
   </template>
   <script>
@@ -65,10 +55,11 @@
       ready: function () {},
       attached: function () {},
       detached: function () {},
-      attributeChanged: function (attribute, oldValue, newValue) {},
+      attributeChanged: function (attribute, oldValue, newValue) {
+        
+      },
       onDirectionChanged: function (e, detail, sender) {
-        console.log(this.dir);
-        this.dir = this.$.dir.selectedItem.getAttribute('value');
+        this.setAttribute('dir', this.$.dir.selectedItem.getAttribute('value'));
       },
       showNotification: function () {
         this.$.notification.show();
