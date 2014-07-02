@@ -43,8 +43,8 @@
   </template>
   <script>
     Polymer('x-notification-editor', {
-      title: 'Hello!',
-      dir: 'auto',
+      title: '',
+      dir: '',
       lang: '',
       body: '',
       delay: 0,
@@ -52,14 +52,14 @@
       observe: {},
       created: function () {},
       domReady: function () {},
-      ready: function () {},
+      ready: function () {
+        this.dir = 'auto';
+      },
       attached: function () {},
       detached: function () {},
-      attributeChanged: function (attribute, oldValue, newValue) {
-        
-      },
+      attributeChanged: function (attribute, oldValue, newValue) {},
       onDirectionChanged: function (e, detail, sender) {
-        this.setAttribute('dir', this.$.dir.selectedItem.getAttribute('value'));
+        this.$.notification.dir = this.$.dir.selectedItem.getAttribute('value');
       },
       showNotification: function () {
         this.$.notification.show();
