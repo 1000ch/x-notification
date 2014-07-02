@@ -22,14 +22,14 @@
     <x-notification id='notification' title="{{title}}" dir="{{dir}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
 
     <!-- tag state -->
-    <pre>&lt;x-notification id=&#039;custom-notification&#039; dir=&#039;{{dir}}&#039; title=&#039;{{title}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
+    <pre>&lt;x-notification dir=&#039;{{dir}}&#039; title=&#039;{{title}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
   {{body}}
 &lt;/x-notification&gt;</pre>
-    
+
     <!-- x-notification editor -->
     <div><paper-input label="Title" value="{{title}}"></paper-input></div>
     <div>
-      <paper-radio-group id="dir" dir="{{dir}}" selected="1" on-change="{{onDirectionChanged}}">
+      <paper-radio-group id="dir" selected="1" on-change="{{directionChanged}}">
         <paper-radio-button label="Auto" value="auto"></paper-radio-button><br>
         <paper-radio-button label="Left to Right" value="ltr"></paper-radio-button><br>
         <paper-radio-button label="Right to Left" value="rtl"></paper-radio-button>
@@ -49,7 +49,9 @@
       body: '',
       delay: 0,
       timeout: 0,
-      observe: {},
+      observe: {
+        '$.notification.dir': 'dirPropertyChanged'
+      },
       created: function () {},
       domReady: function () {},
       ready: function () {
@@ -58,7 +60,8 @@
       attached: function () {},
       detached: function () {},
       attributeChanged: function (attribute, oldValue, newValue) {},
-      onDirectionChanged: function (e, detail, sender) {
+      dirPropertyChanged: function (oldValue, newValue) {},
+      directionChanged: function (e, detail, sender) {
         this.$.notification.dir = this.$.dir.selectedItem.getAttribute('value');
       },
       showNotification: function () {
