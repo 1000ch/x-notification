@@ -19,10 +19,10 @@
     </style>
 
     <!-- target notification -->
-    <x-notification id='notification' title="{{title}}" dir="{{dir}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
+    <x-notification id='notification' title="{{title}}" dir="{{dir}}" lang="{{lang}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
 
     <!-- tag state -->
-    <pre>&lt;x-notification dir=&#039;{{dir}}&#039; title=&#039;{{title}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
+    <pre>&lt;x-notification title=&#039;{{title}}&#039; dir=&#039;{{dir}}&#039; lang=&#039;{{lang}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
   {{body}}
 &lt;/x-notification&gt;</pre>
 
@@ -52,14 +52,9 @@
       observe: {
         '$.notification.dir': 'dirPropertyChanged'
       },
-      created: function () {},
-      domReady: function () {},
       ready: function () {
         this.dir = 'auto';
       },
-      attached: function () {},
-      detached: function () {},
-      attributeChanged: function (attribute, oldValue, newValue) {},
       dirPropertyChanged: function (oldValue, newValue) {},
       directionChanged: function (e, detail, sender) {
         this.$.notification.dir = this.$.dir.selectedItem.getAttribute('value');
