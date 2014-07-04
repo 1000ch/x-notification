@@ -1,6 +1,6 @@
 {
   "name": "x-notification",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/1000ch/x-notification",
   "authors": [
     "1000ch <shogo.sensui@gmail.com>"
@@ -8,10 +8,12 @@
   "description": "Declarative Browser Notifications as Web Components.",
   "main": "x-notification.html",
   "keywords": [
-    "notification"
+    "notification",
+    "WebComponents",
+    "web-components"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
