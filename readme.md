@@ -1,8 +1,8 @@
-# `<x-notification>`
+# [`<x-notification>`](http://1000ch.net/x-notification)
 
 ## About
 
-Browser Notifications as Web Components.
+Declarative Browser Notifications as Web Components.
 
 ## Install
 

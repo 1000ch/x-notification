@@ -1,11 +1,11 @@
 {
   "name": "x-notification",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/1000ch/x-notification",
   "authors": [
     "1000ch <shogo.sensui@gmail.com>"
   ],
-  "description": "Browser Notifications as Web Components.",
+  "description": "Declarative Browser Notifications as Web Components.",
   "main": "x-notification.html",
   "keywords": [
     "notification"
