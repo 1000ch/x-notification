@@ -1,9 +1,3 @@
-<style>
-  :host {
-    display: none;
-  }
-</style>
-<script>
 'use strict';
 
 if (!document.registerElement) {
@@ -256,4 +250,3 @@ window.XNotification = (function () {
     prototype: XNotificationPrototype
   });
 })();
-</script>
