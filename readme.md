@@ -1,4 +1,4 @@
-# [`<x-notification>`](http://1000ch.net/x-notification)
+# [`<x-notification>`](http://1000ch.github.io/x-notification)
 
 ## About
 
@@ -20,13 +20,13 @@ $ bower install x-notification
 
 ## Usage
 
-Import `x-notification.html`.
+Load `x-notification.js`.
 
 ```html
-<link rel="import" href="x-notification.html">
+<script src="x-notification.js"></script>
 ```
 
-After import, put `<x-notification>` tag.
+After loading, put `<x-notification>` tag.
 
 ```html
 <x-notification

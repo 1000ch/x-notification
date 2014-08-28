@@ -6,7 +6,7 @@
     "1000ch <shogo.sensui@gmail.com>"
   ],
   "description": "Declarative Browser Notifications as Web Components.",
-  "main": "x-notification.html",
+  "main": "x-notification.js",
   "keywords": [
     "notification",
     "WebComponents",
