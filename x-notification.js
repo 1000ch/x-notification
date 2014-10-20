@@ -163,6 +163,8 @@ window.XNotification = (function () {
 
   // Check the permission for browser notification
   XNotificationPrototype.createdCallback = function () {
+    
+    this.style.display = 'none';
 
     // if Notification.permission is not 'granted'
     // request permission to show notification
