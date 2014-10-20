@@ -12,6 +12,7 @@
       pre {
         padding: 10px;
         overflow-x: scroll;
+        font-size: 14px;
         font-family: Consolas, 'Source Code Pro', monospace;
         background: #272822;
         color: #fff;
@@ -29,7 +30,7 @@
     <!-- x-notification editor -->
     <div><paper-input label="Title" value="{{titleValue}}"></paper-input></div>
     <div>
-      <paper-radio-group id="dir" selected="1" on-core-select="{{directionChanged}}">
+      <paper-radio-group id="dir" selected="0" on-core-select="{{directionChanged}}">
         <paper-radio-button label="Auto" value="auto"></paper-radio-button><br>
         <paper-radio-button label="Left to Right" value="ltr"></paper-radio-button><br>
         <paper-radio-button label="Right to Left" value="rtl"></paper-radio-button>
@@ -37,8 +38,8 @@
     </div>
     <div><paper-input label="Language" value="{{langValue}}"></paper-input></div>
     <div><paper-input label="Body" value="{{bodyValue}}"></paper-input></div>
-    <div><paper-input label="Delay" value="{{delayValue}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
-    <div><paper-input label="Timeout" value="{{timeoutValue}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
+    <div><paper-input label="Delay" value="{{delayValue}}" pattern="^[0-9]*$" error="Input is not a number!"></paper-input></div>
+    <div><paper-input label="Timeout" value="{{timeoutValue}}" pattern="^[0-9]*$" error="Input is not a number!"></paper-input></div>
     <paper-button on-click="{{showNotification}}" style="color: #4285f4; fill:#4285f4;">Custom Notification</paper-button>
   </template>
   <script>
@@ -49,9 +50,7 @@
       bodyValue: '',
       delayValue: 0,
       timeoutValue: 0,
-      ready: function () {
-        this.dirValue = 'auto';
-      },
+      ready: function () {},
       directionChanged: function (e, detail, sender) {
         if (this.$.dir.selectedItem) {
           this.dirValue = this.$.dir.selectedItem.getAttribute('value');
