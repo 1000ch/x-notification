@@ -4,7 +4,7 @@
 <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 
-<polymer-element name="x-notification-editor" attributes="title dir lang body delay timeout">
+<polymer-element name="x-notification-editor" attributes="titleValue dirValue langValue bodyValue delayValue timeoutValue">
 
   <template>
 
@@ -19,45 +19,43 @@
     </style>
 
     <!-- target notification -->
-    <x-notification id='notification' title="{{title}}" dir="{{dir}}" lang="{{lang}}" delay="{{delay}}" timeout="{{timeout}}">{{body}}</x-notification>
+    <x-notification id='notification' title="{{titleValue}}" dir="{{dirValue}}" lang="{{langValue}}" delay="{{delayValue}}" timeout="{{timeoutValue}}">{{bodyValue}}</x-notification>
 
     <!-- tag state -->
-    <pre>&lt;x-notification title=&#039;{{title}}&#039; dir=&#039;{{dir}}&#039; lang=&#039;{{lang}}&#039; delay=&#039;{{delay}}&#039; timeout=&#039;{{timeout}}&#039;&gt;
-  {{body}}
+    <pre>&lt;x-notification title=&#039;{{titleValue}}&#039; dir=&#039;{{dirValue}}&#039; lang=&#039;{{langValue}}&#039; delay=&#039;{{delayValue}}&#039; timeout=&#039;{{timeoutValue}}&#039;&gt;
+  {{bodyValue}}
 &lt;/x-notification&gt;</pre>
 
     <!-- x-notification editor -->
-    <div><paper-input label="Title" value="{{title}}"></paper-input></div>
+    <div><paper-input label="Title" value="{{titleValue}}"></paper-input></div>
     <div>
-      <paper-radio-group id="dir" selected="1" on-change="{{directionChanged}}">
+      <paper-radio-group id="dir" selected="1" on-core-select="{{directionChanged}}">
         <paper-radio-button label="Auto" value="auto"></paper-radio-button><br>
         <paper-radio-button label="Left to Right" value="ltr"></paper-radio-button><br>
         <paper-radio-button label="Right to Left" value="rtl"></paper-radio-button>
       </paper-radio-group>
     </div>
-    <div><paper-input label="Language" value="{{lang}}"></paper-input></div>
-    <div><paper-input label="Body" value="{{body}}"></paper-input></div>
-    <div><paper-input label="Delay" value="{{delay}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
-    <div><paper-input label="Timeout" value="{{timeout}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
-    <paper-button on-click="{{showNotification}}" label="Custom notification" style="color: #4285f4; fill:#4285f4;"></paper-button>
+    <div><paper-input label="Language" value="{{langValue}}"></paper-input></div>
+    <div><paper-input label="Body" value="{{bodyValue}}"></paper-input></div>
+    <div><paper-input label="Delay" value="{{delayValue}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
+    <div><paper-input label="Timeout" value="{{timeoutValue}}" validate="^[0-9]*$" error="Input is not a number!"></paper-input></div>
+    <paper-button on-click="{{showNotification}}" style="color: #4285f4; fill:#4285f4;">Custom Notification</paper-button>
   </template>
   <script>
     Polymer('x-notification-editor', {
-      title: '',
-      dir: '',
-      lang: '',
-      body: '',
-      delay: 0,
-      timeout: 0,
-      observe: {
-        '$.notification.dir': 'dirPropertyChanged'
-      },
+      titleValue: '',
+      dirValue: '',
+      langValue: '',
+      bodyValue: '',
+      delayValue: 0,
+      timeoutValue: 0,
       ready: function () {
-        this.dir = 'auto';
+        this.dirValue = 'auto';
       },
-      dirPropertyChanged: function (oldValue, newValue) {},
       directionChanged: function (e, detail, sender) {
-        this.$.notification.dir = this.$.dir.selectedItem.getAttribute('value');
+        if (this.$.dir.selectedItem) {
+          this.dirValue = this.$.dir.selectedItem.getAttribute('value');
+        }
       },
       showNotification: function () {
         this.$.notification.show();
