@@ -1,10 +1,10 @@
 BUILD LOG
 ---------
-Build Time: 2014-06-19T17:32:04
+Build Time: 2014-10-02T15:20:01
 
 NODEJS INFORMATION
 ==================
-nodejs: v0.10.28
+nodejs: v0.10.32
 chai: 1.9.1
 grunt: 0.4.4
 grunt-audit: 0.0.3
@@ -21,19 +21,18 @@ karma-mocha: 0.1.4
 karma-safari-launcher: 0.1.1
 karma-script-launcher: 0.1.0
 mocha: 1.20.1
-Platform: 0.3.3
+Platform: 0.4.2
 
 REPO REVISIONS
 ==============
-CustomElements: fb07153479152bec116b7f4beb19bf7d63955963
-HTMLImports: 558eb287f70dfee4028ce49f98487a9289c4227e
-NodeBind: c47bc1b40d1cf0123b29620820a7111471e83ff3
-ShadowDOM: 527721ae2d61213932f0660632c486909db26320
-TemplateBinding: c313a291bf4e43033eb998d07c55871a860ff576
-WeakMap: a0947a9a0f58f5733f464755c3b86de624b00a5d
-observe-js: c701be123a9b66c922fcad9e3cceba4e7907b3be
-platform-dev: 29065bc56f0a13ba4e973dab34144460913541ce
+WeakMap: 027f63a0b3ad8dfd26754b7943aacadee50559b7
+observe-js: b17a7aa27e4ed044ad503747e6d5a0011fb8d149
+ShadowDOM: 9472cf7a992f8c903e9db4235bc7da5d2d9640fb
+URL: cf5d82e444d2a029834365a8b9d185fd792227f0
+MutationObservers: a8aa7f9cc35c3ebef152be42f87ec2677a87f55e
+HTMLImports: 8d4f5ec4d6130c9035a5a4337c1a86f90e1b992d
+CustomElements: efdbbcb5a4ce27cd2c2b53312b15ba455554ffa8
 
 BUILD HASHES
 ============
-build/platform.js: 4997cd34cb18985f751af72069eec27611e3c92d
+build/platform.js: 448870d9303bfd7d1cfff36b6702be0714b9c4f2
