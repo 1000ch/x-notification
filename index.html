@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <script src="bower_components/platform/platform.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponentsjs.js"></script>
 
+    <link rel="stylesheet" href="bower_components/markdown.css/markdown.css">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
@@ -22,12 +24,10 @@
         display: block;
         max-width: 720px;
       }
-      section {
-        margin: 1em;
-      }
       pre {
         padding: 10px;
         overflow-x: scroll;
+        font-size: 14px;
         font-family: Consolas, 'Source Code Pro', monospace;
         background: #272822;
         color: #fff;
@@ -42,21 +42,17 @@
     <column>
       <h1><a href="https://github.com/1000ch/x-notification">x-notification</a></h1>
       <p>Declarative Browser Notification as Web Components.</p>
-      <section>
-        <h2>Autoshow Example</h2>
-        <pre>&lt;x-notification autoshow title=&#039;Hello!&#039; delay=&#039;0&#039; timeout=&#039;3000&#039;&gt;
-  This will be shown automatically.
-  Delay is 0, timeout is 3000.
+      <h2>Autoshow Example</h2>
+      <pre>&lt;x-notification autoshow title=&#039;Hello!&#039; delay=&#039;0&#039; timeout=&#039;3000&#039;&gt;
+This will be shown automatically.
+Delay is 0, timeout is 3000.
 &lt;/x-notification&gt;</pre>
-        <x-notification id="autoshow-notification" autoshow title='Hello!' delay='0' timeout='3000'>
-          This will be shown automatically.
-          Delay is 0, timeout is 3000.
-        </x-notification>
-      </section>
-      <section>
-        <h2>Customize Example</h2>
-        <x-notification-editor></x-notification-editor>
-      </section>
+      <x-notification id="autoshow-notification" autoshow title='Hello!' delay='0' timeout='3000'>
+        This will be shown automatically.
+        Delay is 0, timeout is 3000.
+      </x-notification>
+      <h2>Customize Example</h2>
+      <x-notification-editor></x-notification-editor>
     </column>
     <a href="https://github.com/1000ch/x-notification"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
   </body>
