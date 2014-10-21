@@ -6,6 +6,9 @@
     "start": "python -m http.server",
     "test": "./node_modules/testem/testem.js -l PhantomJS ci"
   },
+  "files": [
+    "x-notification.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/x-notification.git"
