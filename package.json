@@ -1,11 +1,14 @@
 {
   "name": "x-notification",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Declarative Browser Notifications as Web Components.",
   "scripts": {
     "start": "python -m http.server",
     "test": "./node_modules/testem/testem.js -l PhantomJS ci"
   },
+  "files": [
+    "x-notification.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/x-notification.git"

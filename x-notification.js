@@ -1,12 +1,6 @@
-'use strict';
-
-if (!document.registerElement) {
-  throw new Error('Browser does not support document.registerElement');
-}
-
 window.XNotification = (function () {
 
-  var NOOP = function () {};
+  'use strict';
 
   // fix Notification object
   var Notification = window.Notification || window.webkitNotification || window.mozNotification;
@@ -101,66 +95,6 @@ window.XNotification = (function () {
     }
   });
 
-  Object.defineProperty(XNotificationPrototype, 'onclick', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('onclick')) {
-        return new Function(this.getAttribute('onclick'))
-      } else {
-        return NOOP;
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('onclick', newValue);
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'onshow', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('onshow')) {
-        return new Function(this.getAttribute('onshow'))
-      } else {
-        return NOOP;
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('onshow', newValue);
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'onerror', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('onerror')) {
-        return new Function(this.getAttribute('onerror'))
-      } else {
-        return NOOP;
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('onerror', newValue);
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'onclose', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('onclose')) {
-        return new Function(this.getAttribute('onclose'))
-      } else {
-        return NOOP;
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('onclose', newValue);
-    }
-  });
-
   // Check the permission for browser notification
   XNotificationPrototype.createdCallback = function () {
     
@@ -210,18 +144,20 @@ window.XNotification = (function () {
         icon: that.icon
       });
 
-      // Set callbacks
-      that.notification.onclick = that.onclick;
-      that.notification.onshow = that.onshow;
-      that.notification.onerror = that.onerror;
-      that.notification.onclose = that.onclose;
-
       if (that.timeout !== 0) {
         that.timeoutTimerId = window.setTimeout(function () {
           that.close();
         }, that.timeout);
       }
     }, that.delay);
+  };
+
+  XNotificationPrototype.addEventListener = function (type, listener, useCapture) {
+    this.notification.addEventListener(type, listener, useCapture);
+  };
+
+  XNotificationPrototype.removeEventListener = function (type, listener, useCapture) {
+    this.notification.removeEventListener(type, listener, useCapture);
   };
 
   // Close notification
