@@ -7,9 +7,14 @@
     "node_modules/chai/chai.js",
     "node_modules/sinon/pkg/sinon.js"
   ],
-  "serve_files": [
+  "src_files": [
+    "x-notification.js",
     "test/*.js"
   ],
-  "launch_in_dev": ["PhantomJS"],
+  "serve_files": [
+    "x-notification.js",
+    "test/*.js"
+  ],
+  "launch_in_dev": ["PhantomJS", "Chrome"],
   "launch_in_ci": ["PhantomJS"]
 }
