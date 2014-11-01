@@ -6,48 +6,15 @@ window.XNotification = (function () {
   var Notification = window.Notification || window.webkitNotification || window.mozNotification;
   var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
-  Object.defineProperty(XNotificationPrototype, 'title', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      return this.getAttribute('title');
-    },
-    set: function (newValue) {
-      this.setAttribute('title', newValue);
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'dir', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      return this.getAttribute('dir');
-    },
-    set: function (newValue) {
-      if (['auto', 'ltr', 'rtl'].indexOf(newValue) !== -1) {
-        this.setAttribute('dir', newValue);
-      } else {
-        throw new Error(newValue + ' is invalid value for dir');
-      }
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'lang', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      return this.getAttribute('lang');
-    },
-    set: function (newValue) {
-      this.setAttribute('lang', newValue);
-    }
-  });
-
   Object.defineProperty(XNotificationPrototype, 'tag', {
     configurable: false,
     enumerable: false,
     get: function () {
-      return this.getAttribute('tag');
+      if (this.hasAttribute('tag')) {
+        return this.getAttribute('tag');
+      } else {
+        return null;
+      }
     },
     set: function (newValue) {
       this.setAttribute('tag', newValue);
@@ -58,7 +25,11 @@ window.XNotification = (function () {
     configurable: false,
     enumerable: false,
     get: function () {
-      return this.getAttribute('icon');
+      if (this.hasAttribute('icon')) {
+        return this.getAttribute('icon');
+      } else {
+        return null
+      }
     },
     set: function (newValue) {
       this.setAttribute('icon', newValue);
@@ -77,7 +48,11 @@ window.XNotification = (function () {
     configurable: false,
     enumerable: false,
     get: function () {
-      return Number(this.getAttribute('delay')) || 0;
+      if (this.hasAttribute('delay')) {
+        return Number(this.getAttribute('delay')) || 0;
+      } else {
+        return null;
+      }
     },
     set: function (newValue) {
       this.setAttribute('delay', newValue);
@@ -88,7 +63,11 @@ window.XNotification = (function () {
     configurable: false,
     enumerable: false,
     get: function () {
-      return Number(this.getAttribute('timeout')) || 0;
+      if (this.hasAttribute('timeout')) {
+        return Number(this.getAttribute('timeout')) || 0;
+      } else {
+        return null;
+      }
     },
     set: function (newValue) {
       this.setAttribute('timeout', newValue);
@@ -97,7 +76,7 @@ window.XNotification = (function () {
 
   // Check the permission for browser notification
   XNotificationPrototype.createdCallback = function () {
-    
+
     this.style.display = 'none';
 
     // if Notification.permission is not 'granted'

@@ -84,22 +84,6 @@ Timeout for timing to close notification automatically.
 
 If you add this attribute, notification will be shown automatically.
 
-### `onclick=<Function>`
-
-A handler for the `click` event. It is triggered each time the user clicks on the notification.
-
-### `onshow=<Function>`
-
-A handler for the `show` event. It is triggered when the notification is displayed.
-
-### `onerror=<Function>`
-
-A handler for the `error` event. It is triggered each time the notification encounters an error.
-
-### `onclose=<Function>`
-
-A handler for the `close` event. It is triggered when the user closes the notification.
-
 ## License
 
 MIT
