@@ -6,55 +6,6 @@ window.XNotification = (function () {
   var Notification = window.Notification || window.webkitNotification || window.mozNotification;
   var XNotificationPrototype = Object.create(HTMLElement.prototype);
 
-  Object.defineProperty(XNotificationPrototype, 'title', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('title')) {
-        return this.getAttribute('title');
-      } else {
-        return null
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('title', newValue);
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'dir', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('dir')) {
-        return this.getAttribute('dir');
-      } else {
-        return null;
-      }
-    },
-    set: function (newValue) {
-      if (['auto', 'ltr', 'rtl'].indexOf(newValue) !== -1) {
-        this.setAttribute('dir', newValue);
-      } else {
-        throw new Error(newValue + ' is invalid value for dir');
-      }
-    }
-  });
-
-  Object.defineProperty(XNotificationPrototype, 'lang', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
-      if (this.hasAttribute('lang')) {
-        return this.getAttribute('lang');
-      } else {
-        return null;
-      }
-    },
-    set: function (newValue) {
-      this.setAttribute('lang', newValue);
-    }
-  });
-
   Object.defineProperty(XNotificationPrototype, 'tag', {
     configurable: false,
     enumerable: false,
@@ -125,7 +76,7 @@ window.XNotification = (function () {
 
   // Check the permission for browser notification
   XNotificationPrototype.createdCallback = function () {
-    
+
     this.style.display = 'none';
 
     // if Notification.permission is not 'granted'
