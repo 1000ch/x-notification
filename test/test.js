@@ -5,7 +5,7 @@ describe('XNotification', function () {
   it('is a function', function () {
     expect(XNotification).to.be.a('function');
   });
-  
+
   it('create an instance', function () {
     expect(new XNotification()).to.be.a('object');
   });
@@ -19,18 +19,6 @@ describe('XNotification', function () {
 describe('XNotification Instance', function () {
 
   var notification = new XNotification();
-
-  it('has "title" attribute', function () {
-    expect(notification.title).to.be.a('string');
-  });
-
-  it('has "dir" attribute', function () {
-    expect(notification.dir).to.be.a('string');
-  });
-
-  it('has "lang" attribute', function () {
-    expect(notification.lang).to.be.a('string');
-  });
 
   it('has "tag" attribute', function () {
     expect(notification.tag).to.be.a('null');
