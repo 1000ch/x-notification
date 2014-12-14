@@ -116,7 +116,7 @@ window.XNotification = (function () {
 
       // Initialize notification instance
       that.notification = new Notification(that.title, {
-        dir: that.dir,
+        dir: that.dir || 'auto',
         lang: that.lang,
         body: that.textContent,
         tag: that.tag,
