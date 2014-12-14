@@ -22,12 +22,12 @@
     "tests"
   ],
   "devDependencies": {
-    "webcomponentsjs": "~0.4.2",
-    "polymer": "~0.4.2",
-    "paper-shadow": "Polymer/paper-shadow#~0.4.2",
-    "paper-input": "Polymer/paper-input#~0.4.2",
-    "paper-radio-group": "Polymer/paper-radio-group#~0.4.2",
-    "paper-button": "Polymer/paper-button#~0.4.2",
-    "markdown.css": "~0.1.0"
+    "polymer": "~0.5.2",
+    "webcomponentsjs": "~0.5.2",
+    "paper-button": "Polymer/paper-button#~0.5.2",
+    "paper-input": "Polymer/paper-input#~0.5.2",
+    "paper-radio-group": "Polymer/paper-radio-group#~0.5.2",
+    "paper-shadow": "Polymer/paper-shadow#~0.5.2",
+    "markdown.css": "~0.1.1"
   }
 }

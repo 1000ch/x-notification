@@ -9,7 +9,7 @@
   <template>
 
     <style>
-      pre {
+      :host pre {
         padding: 10px;
         overflow-x: scroll;
         font-size: 14px;
@@ -20,7 +20,7 @@
     </style>
 
     <!-- target notification -->
-    <x-notification id='notification' title="{{titleValue}}" dir="{{dirValue}}" lang="{{langValue}}" delay="{{delayValue}}" timeout="{{timeoutValue}}">{{bodyValue}}</x-notification>
+    <x-notification id="notification" title="{{titleValue}}" dir="{{dirValue}}" lang="{{langValue}}" delay="{{delayValue}}" timeout="{{timeoutValue}}">{{bodyValue}}</x-notification>
 
     <!-- tag state -->
     <pre>&lt;x-notification title=&#039;{{titleValue}}&#039; dir=&#039;{{dirValue}}&#039; lang=&#039;{{langValue}}&#039; delay=&#039;{{delayValue}}&#039; timeout=&#039;{{timeoutValue}}&#039;&gt;
