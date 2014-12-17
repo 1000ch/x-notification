@@ -4,7 +4,7 @@
   "description": "Declarative Browser Notifications as Web Components.",
   "scripts": {
     "start": "python -m http.server",
-    "test": "./node_modules/testem/testem.js -l PhantomJS ci"
+    "test": "./node_modules/testem/testem.js -l Chrome ci"
   },
   "files": [
     "x-notification.js"

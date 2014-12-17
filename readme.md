@@ -4,6 +4,9 @@
 
 Declarative Browser Notifications as Web Components.
 
+[![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
+[![NPM version](https://badge.fury.io/js/x-notification.svg)](http://badge.fury.io/js/x-notification)
+
 ## Install
 
 Using [npm](https://www.npmjs.org/package/x-notification):
