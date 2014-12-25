@@ -19,7 +19,11 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "index.html",
+    "x-notification-editor.html",
+    "testem.json",
+    ".editorconfig",
+    ".travis.yml"
   ],
   "devDependencies": {
     "polymer": "~0.5.2",
