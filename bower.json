@@ -25,12 +25,11 @@
     ".travis.yml"
   ],
   "devDependencies": {
-    "polymer": "~0.5.2",
-    "webcomponentsjs": "~0.5.2",
-    "paper-button": "Polymer/paper-button#~0.5.2",
-    "paper-input": "Polymer/paper-input#~0.5.2",
-    "paper-radio-group": "Polymer/paper-radio-group#~0.5.2",
-    "paper-shadow": "Polymer/paper-shadow#~0.5.2",
-    "markdown.css": "~0.1.1"
+    "markdown.css": "~0.1.1",
+    "polymer": "~0.5.5",
+    "paper-button": "Polymer/paper-button#~0.5.5",
+    "paper-input": "Polymer/paper-input#~0.5.5",
+    "paper-radio-group": "Polymer/paper-radio-group#~0.5.5",
+    "paper-shadow": "Polymer/paper-shadow#~0.5.5"
   }
 }
