@@ -32,7 +32,7 @@ Load `x-notification.js`.
 After loading, put `<x-notification>` tag.
 
 ```html
-<x-notification autoshow title='Notification Title' delay='1000' timeout='3000' tag='tag'>
+<x-notification autoshow title="Notification Title" delay="1000" timeout="3000" tag="tag">
   Notification body
 </x-notification>
 ```
