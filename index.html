@@ -6,18 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <script>
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('sw.js', {
-          scope: '/'
-        }).then(function (e) {
-          console.log(e);
-        }).catch(function (error) {
-          console.log(error);
-        });
-      }
-    </script>
-
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
     <link rel="stylesheet" href="bower_components/markdown.css/markdown.css">
@@ -26,7 +14,7 @@
     <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
 
-    <script src="x-notification.js"></script>
+    <link rel="import" href="x-notification.html"></script>
     <link rel="import" href="x-notification-editor.html">
 
     <style>
