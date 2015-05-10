@@ -4,6 +4,9 @@
 
 Declarative Browser Notifications as Web Components.
 
+[![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
+[![NPM version](https://badge.fury.io/js/x-notification.svg)](http://badge.fury.io/js/x-notification)
+
 ## Install
 
 Using [npm](https://www.npmjs.org/package/x-notification):
@@ -29,12 +32,9 @@ Load `x-notification.js`.
 After loading, put `<x-notification>` tag.
 
 ```html
-<x-notification
-  autoshow
-  title='Notification Title'
-  delay='1000'
-  timeout='3000'
-  tag='tag'>Notification body</x-notification>
+<x-notification autoshow title="Notification Title" delay="1000" timeout="3000" tag="tag">
+  Notification body
+</x-notification>
 ```
 
 If you set `autoshow` attribute, a notification will be shown automatically.
@@ -86,4 +86,4 @@ If you add this attribute, notification will be shown automatically.
 
 ## License
 
-MIT
+MIT: http://1000ch.mit-license.org/
