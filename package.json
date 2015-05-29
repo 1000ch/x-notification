@@ -1,6 +1,6 @@
 {
   "name": "x-notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Declarative Browser Notifications as Web Components.",
   "scripts": {
     "start": "python -m http.server",
