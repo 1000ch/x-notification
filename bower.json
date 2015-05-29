@@ -25,11 +25,12 @@
     ".travis.yml"
   ],
   "devDependencies": {
-    "markdown.css": "~0.1.1",
     "polymer": "~1.0.1",
     "paper-button": "PolymerElements/paper-button#~1.0.1",
     "paper-input": "PolymerElements/paper-input#~1.0.0",
     "paper-radio-group": "PolymerElements/paper-radio-group#~1.0.1",
-    "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.1"
+    "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.1",
+    "primer-css": "~2.1.0",
+    "primer-markdown": "~2.1.7"
   }
 }

@@ -7,12 +7,12 @@
 <dom-module id="x-notification-editor">
   <style>
     :host pre {
-      padding: 10px;
-      overflow-x: scroll;
-      font-size: 14px;
-      font-family: Consolas, 'Source Code Pro', monospace;
-      background: #272822;
-      color: #fff;
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
     }
   </style>
   <template>
@@ -26,10 +26,10 @@
     <!-- x-notification editor -->
     <div><paper-input label="Title" value="{{titleValue}}"></paper-input></div>
     <div>
-      <paper-radio-group id="dir" selected="auto" on-paper-radio-group-changed="directionChanged">
-        <paper-radio-button name="auto" label="Auto" value="auto"></paper-radio-button><br>
-        <paper-radio-button name="ltr" label="Left to Right" value="ltr"></paper-radio-button><br>
-        <paper-radio-button name="rtl" label="Right to Left" value="rtl"></paper-radio-button>
+      <paper-radio-group id="dir" selected="auto" role="radiogroup" on-paper-radio-group-changed="directionChanged">
+        <paper-radio-button name="auto" aria-label="Auto" value="auto">Auto</paper-radio-button><br>
+        <paper-radio-button name="ltr" aria-label="Left to Right" value="ltr">Left to Right</paper-radio-button><br>
+        <paper-radio-button name="rtl" aria-label="Right to Left" value="rtl">Right to Left</paper-radio-button>
       </paper-radio-group>
     </div>
     <div><paper-input label="Language" value="{{langValue}}"></paper-input></div>
