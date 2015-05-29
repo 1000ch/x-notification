@@ -134,11 +134,15 @@ window.XNotification = (function () {
   };
 
   XNotificationPrototype.addEventListener = function (type, listener, useCapture) {
-    this.notification.addEventListener(type, listener, useCapture);
+    if (this.notification) {
+      this.notification.addEventListener(type, listener, useCapture);
+    }
   };
 
   XNotificationPrototype.removeEventListener = function (type, listener, useCapture) {
-    this.notification.removeEventListener(type, listener, useCapture);
+    if (this.notification) {
+      this.notification.removeEventListener(type, listener, useCapture);
+    }
   };
 
   // Close notification
