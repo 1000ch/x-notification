@@ -1,7 +1,5 @@
 # [`<x-notification>`](http://1000ch.github.io/x-notification)
 
-## About
-
 Declarative Browser Notifications as Web Components.
 
 [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
