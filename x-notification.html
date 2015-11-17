@@ -5,8 +5,8 @@ window.XNotification = (function () {
   'use strict';
 
   // fix Notification object
-  var Notification = window.Notification || window.webkitNotification || window.mozNotification;
-  var XNotificationPrototype = Object.create(HTMLElement.prototype);
+  const Notification = window.Notification || window.webkitNotification || window.mozNotification;
+  const XNotificationPrototype = Object.create(HTMLElement.prototype);
 
   Object.defineProperty(XNotificationPrototype, 'tag', {
     configurable: false,
@@ -84,7 +84,7 @@ window.XNotification = (function () {
     // if Notification.permission is not 'granted'
     // request permission to show notification
     if (Notification.permission !== 'granted') {
-      Notification.requestPermission(function (status) {
+      Notification.requestPermission(status => {
         if (Notification.permission !== status) {
           Notification.permission = status;
         }
@@ -106,31 +106,26 @@ window.XNotification = (function () {
     }
   };
 
-  // If attribute is changed
-  XNotificationPrototype.attributeChangedCallback = function (attributeName, oldValue, newValue) {};
-
   // Show notification
   XNotificationPrototype.show = function () {
 
-    var that = this;
-
-    this.delayTimerId = setTimeout(function () {
+    this.delayTimerId = setTimeout(() => {
 
       // Initialize notification instance
-      that.notification = new Notification(that.title, {
-        dir: that.dir || 'auto',
-        lang: that.lang,
-        body: that.textContent,
-        tag: that.tag,
-        icon: that.icon
+      this.notification = new Notification(this.title, {
+        dir: this.dir || 'auto',
+        lang: this.lang,
+        body: this.textContent,
+        tag: this.tag,
+        icon: this.icon
       });
 
-      if (that.timeout !== 0) {
-        that.timeoutTimerId = window.setTimeout(function () {
-          that.close();
-        }, that.timeout);
+      if (this.timeout !== 0) {
+        this.timeoutTimerId = window.setTimeout(() => {
+          this.close();
+        }, this.timeout);
       }
-    }, that.delay);
+    }, this.delay);
   };
 
   XNotificationPrototype.addEventListener = function (type, listener, useCapture) {
