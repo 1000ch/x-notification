@@ -1,172 +1,131 @@
+<template>
+  <style></style>
+</template>
 <script>
-
 window.XNotification = (function () {
-
   'use strict';
-
-  // fix Notification object
-  const Notification = window.Notification || window.webkitNotification || window.mozNotification;
-  const XNotificationPrototype = Object.create(HTMLElement.prototype);
-
-  Object.defineProperty(XNotificationPrototype, 'tag', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
+  class XNotification extends HTMLElement {
+    get tag() {
       if (this.hasAttribute('tag')) {
         return this.getAttribute('tag');
       } else {
         return null;
       }
-    },
-    set: function (newValue) {
-      this.setAttribute('tag', newValue);
     }
-  });
+    set tag(value) {
+      this.setAttribute('tag', value);
+    }
 
-  Object.defineProperty(XNotificationPrototype, 'icon', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
+    get icon() {
       if (this.hasAttribute('icon')) {
         return this.getAttribute('icon');
       } else {
-        return null
+        return null;
       }
-    },
-    set: function (newValue) {
-      this.setAttribute('icon', newValue);
     }
-  });
+    set icon(value) {
+      this.setAttribute('icon', value);
+    }
 
-  Object.defineProperty(XNotificationPrototype, 'autoshow', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
+    get autoshow() {
       return this.hasAttribute('autoshow');
     }
-  });
 
-  Object.defineProperty(XNotificationPrototype, 'delay', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
+    get delay() {
       if (this.hasAttribute('delay')) {
         return Number(this.getAttribute('delay')) || 0;
       } else {
         return null;
       }
-    },
-    set: function (newValue) {
-      this.setAttribute('delay', newValue);
     }
-  });
+    set delay(value) {
+      this.setAttribute('delay', value);
+    }
 
-  Object.defineProperty(XNotificationPrototype, 'timeout', {
-    configurable: false,
-    enumerable: false,
-    get: function () {
+    get timeout() {
       if (this.hasAttribute('timeout')) {
         return Number(this.getAttribute('timeout')) || 0;
       } else {
         return null;
       }
-    },
-    set: function (newValue) {
-      this.setAttribute('timeout', newValue);
     }
-  });
-
-  // Check the permission for browser notification
-  XNotificationPrototype.createdCallback = function () {
-
-    this.style.display = 'none';
-
-    // if Notification.permission is not 'granted'
-    // request permission to show notification
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission(status => {
-        if (Notification.permission !== status) {
-          Notification.permission = status;
-        }
-      });
+    set timeout(value) {
+      this.setAttribute('timeout', value);
     }
-  };
 
-  // When x-notification or XNotification object it set,
-  // prepare parameters for Notification object
-  XNotificationPrototype.attachedCallback = function () {
-    if (this.autoshow) {
-      this.show();
-    }
-  };
+    createdCallback() {
+      this.style.display = 'none';
 
-  XNotificationPrototype.detachedCallback = function () {
-    if (this.notification) {
-      this.notification.close();
-    }
-  };
-
-  // Show notification
-  XNotificationPrototype.show = function () {
-
-    this.delayTimerId = setTimeout(() => {
-
-      // Initialize notification instance
-      this.notification = new Notification(this.title, {
-        dir: this.dir || 'auto',
-        lang: this.lang,
-        body: this.textContent,
-        tag: this.tag,
-        icon: this.icon
-      });
-
-      if (this.timeout !== 0) {
-        this.timeoutTimerId = window.setTimeout(() => {
-          this.close();
-        }, this.timeout);
+      // if Notification.permission is not 'granted'
+      // request permission to show notification
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission(function (status) {
+          if (Notification.permission !== status) {
+            Notification.permission = status;
+          }
+        });
       }
-    }, this.delay);
-  };
-
-  XNotificationPrototype.addEventListener = function (type, listener, useCapture) {
-    if (this.notification) {
-      this.notification.addEventListener(type, listener, useCapture);
-    }
-  };
-
-  XNotificationPrototype.removeEventListener = function (type, listener, useCapture) {
-    if (this.notification) {
-      this.notification.removeEventListener(type, listener, useCapture);
-    }
-  };
-
-  // Close notification
-  XNotificationPrototype.close = function () {
-
-    if (this.notification) {
-      this.notification.close();
     }
 
-    this.disposeTimer();
-  };
-
-  // Stop timers for delay and timeout
-  XNotificationPrototype.disposeTimer = function () {
-
-    // Clear delay timer
-    if (this.delayTimerId) {
-      window.clearTimeout(this.delayTimerId);
+    attachedCallback() {
+      if (this.autoshow) {
+        this.show();
+      }
     }
 
-    // Clear timeout timer
-    if (this.timeoutTimerId) {
-      window.clearTimeout(this.timeoutTimerId);
+    detachedCallback() {
+      if (this.notification) {
+        this.notification.close();
+      }
     }
-  };
 
-  return document.registerElement('x-notification', {
-    prototype: XNotificationPrototype
-  });
+    addEventListener(type, listener, useCapture) {
+      if (this.notification) {
+        this.notification.addEventListener(type, listener, useCapture);
+      }
+    }
+
+    removeEventListener(type, listener, useCapture) {
+      if (this.notification) {
+        this.notification.removeEventListener(type, listener, useCapture);
+      }
+    }
+
+    show() {
+      this.delayTimerId = setTimeout(() => {
+        this.notification = new Notification(this.title, {
+          dir: this.dir || 'auto',
+          lang: this.lang,
+          body: this.textContent,
+          tag: this.tag,
+          icon: this.icon
+        });
+
+        if (this.timeout !== 0) {
+          this.timeoutTimerId = window.setTimeout(() => this.close(), this.timeout);
+        }
+      }, this.delay);
+    }
+
+    close() {
+      if (this.notification) {
+        this.notification.close();
+      }
+
+      this.disposeTimer();
+    }
+
+    disposeTimer() {
+      if (this.delayTimerId) {
+        window.clearTimeout(this.delayTimerId);
+      }
+
+      if (this.timeoutTimerId) {
+        window.clearTimeout(this.timeoutTimerId);
+      }
+    }
+  }
+
+  return document.registerElement('x-notification', XNotification);
 })();
-
 </script>
