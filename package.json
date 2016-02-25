@@ -7,15 +7,16 @@
     "test": "./node_modules/testem/testem.js -l Chrome ci"
   },
   "files": [
-    "x-notification.js"
+    "x-notification.html"
   ],
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/x-notification.git"
   },
   "keywords": [
+    "Notification",
     "WebComponents",
-    "Notification"
+    "web-components"
   ],
   "author": {
     "name": "1000ch",
@@ -26,11 +27,5 @@
   "bugs": {
     "url": "https://github.com/1000ch/x-notification/issues"
   },
-  "homepage": "https://github.com/1000ch/x-notification",
-  "devDependencies": {
-    "chai": "^1.9.1",
-    "mocha": "^1.18.2",
-    "sinon": "^1.10.2",
-    "testem": "^0.6.16"
-  }
+  "homepage": "https://github.com/1000ch/x-notification"
 }

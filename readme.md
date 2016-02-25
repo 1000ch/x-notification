@@ -1,19 +1,16 @@
-# [`<x-notification>`](http://1000ch.github.io/x-notification)
+# x-notification
 
 Declarative Browser Notifications as Web Components.
 
-[![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
-[![NPM version](https://badge.fury.io/js/x-notification.svg)](http://badge.fury.io/js/x-notification)
-
 ## Install
 
-Using [npm](https://www.npmjs.org/package/x-notification):
+Via [npm](https://www.npmjs.org/package/x-notification):
 
 ```sh
 $ npm install x-notification
 ```
 
-Using [bower](http://bower.io/search/?q=x-notification):
+Via [bower](http://bower.io/search/?q=x-notification):
 
 ```sh
 $ bower install x-notification
@@ -21,10 +18,10 @@ $ bower install x-notification
 
 ## Usage
 
-Load `x-notification.js`.
+Import `x-notification.html`.
 
 ```html
-<script src="x-notification.js"></script>
+<link rel="import" href="x-notification.html">
 ```
 
 After loading, put `<x-notification>` tag.
