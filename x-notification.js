@@ -1,8 +1,4 @@
-<template>
-  <style></style>
-</template>
-<script>
-customElements.define('x-notification', class XNotification extends HTMLElement {
+export default class XNotification extends HTMLElement {
   get tag() {
     if (this.hasAttribute('tag')) {
       return this.getAttribute('tag');
@@ -128,5 +124,4 @@ customElements.define('x-notification', class XNotification extends HTMLElement 
       clearTimeout(this.timeoutTimerId);
     }
   }
-});
-</script>
+}
