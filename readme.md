@@ -1,4 +1,4 @@
-# x-notification
+# `<x-notification>`
 
 Declarative Browser Notifications as Web Components.
 
@@ -10,18 +10,15 @@ Via [npm](https://www.npmjs.org/package/x-notification):
 $ npm install x-notification
 ```
 
-Via [bower](http://bower.io/search/?q=x-notification):
-
-```sh
-$ bower install x-notification
-```
-
 ## Usage
 
-Import `x-notification.html`.
+Import `x-notification.js` and register.
 
 ```html
-<link rel="import" href="x-notification.html">
+<script type="module">
+  import XNotification from './x-notification.js';
+  customElements.define('x-notification', XNotification);
+</script>
 ```
 
 After loading, put `<x-notification>` tag.
@@ -81,4 +78,4 @@ If you add this attribute, notification will be shown automatically.
 
 ## License
 
-MIT: http://1000ch.mit-license.org/
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
