@@ -20,5 +20,17 @@
     "name": "1000ch",
     "email": "shogosensui@gmail.com",
     "web": "https://github.com/1000ch"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "space": true
   }
 }
