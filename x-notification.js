@@ -2,9 +2,9 @@ export default class XNotification extends HTMLElement {
   get tag() {
     if (this.hasAttribute('tag')) {
       return this.getAttribute('tag');
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   set tag(value) {
@@ -14,9 +14,9 @@ export default class XNotification extends HTMLElement {
   get icon() {
     if (this.hasAttribute('icon')) {
       return this.getAttribute('icon');
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   set icon(value) {
@@ -30,9 +30,9 @@ export default class XNotification extends HTMLElement {
   get delay() {
     if (this.hasAttribute('delay')) {
       return Number(this.getAttribute('delay')) || 0;
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   set delay(value) {
@@ -42,9 +42,9 @@ export default class XNotification extends HTMLElement {
   get timeout() {
     if (this.hasAttribute('timeout')) {
       return Number(this.getAttribute('timeout')) || 0;
-    } else {
-      return null;
     }
+
+    return null;
   }
 
   set timeout(value) {
@@ -56,10 +56,10 @@ export default class XNotification extends HTMLElement {
 
     this.style.display = 'none';
 
-    // if Notification.permission is not 'granted'
+    // If Notification.permission is not 'granted'
     // request permission to show notification
     if (Notification.permission !== 'granted') {
-      Notification.requestPermission(function (status) {
+      Notification.requestPermission(status => {
         if (Notification.permission !== status) {
           Notification.permission = status;
         }
