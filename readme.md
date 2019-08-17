@@ -1,4 +1,4 @@
-# `<x-notification>`
+# `<x-notification>`  [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
 
 Declarative Browser Notifications as Web Components.
 
