@@ -2,30 +2,23 @@
   "name": "x-notification",
   "version": "1.1.0",
   "description": "Declarative Browser Notifications as Web Components.",
-  "scripts": {
-    "start": "python -m http.server",
-    "test": "./node_modules/testem/testem.js -l Chrome ci"
-  },
-  "files": [
-    "x-notification.html"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/1000ch/x-notification.git"
-  },
   "keywords": [
     "Notification",
     "WebComponents",
     "web-components"
   ],
-  "author": {
-    "name": "1000ch",
-    "email": "shogo.sensui@gmail.com",
-    "web": "http://github.com/1000ch"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/1000ch/x-notification",
   "bugs": {
     "url": "https://github.com/1000ch/x-notification/issues"
   },
-  "homepage": "https://github.com/1000ch/x-notification"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/x-notification.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "1000ch",
+    "email": "shogosensui@gmail.com",
+    "web": "https://github.com/1000ch"
+  }
 }
