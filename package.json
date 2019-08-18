@@ -37,6 +37,5 @@
     "terser": "^4.1.4",
     "typescript": "^3.5.3",
     "xo": "^0.24.0"
-  },
-  "jsdelivr": "dist/x-notification.js"
+  }
 }
