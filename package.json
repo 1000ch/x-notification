@@ -22,15 +22,18 @@
     "web": "https://github.com/1000ch"
   },
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "xo"
-  },
-  "devDependencies": {
-    "xo": "^0.24.0"
   },
   "xo": {
     "envs": [
       "browser"
     ],
     "space": true
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3",
+    "xo": "^0.24.0"
   }
 }
