@@ -21,9 +21,9 @@
     "email": "shogosensui@gmail.com",
     "web": "https://github.com/1000ch"
   },
-  "module": "./dist/x-notification.js",
+  "module": "dist/x-notification.js",
   "scripts": {
-    "build": "tsc && terser --output ./dist/x-notification.js ./dist/x-notification.js",
+    "build": "tsc && terser --output dist/x-notification.js dist/x-notification.js",
     "prepublishOnly": "npm run build",
     "test": "xo"
   },
@@ -37,5 +37,6 @@
     "terser": "^4.1.4",
     "typescript": "^3.5.3",
     "xo": "^0.24.0"
-  }
+  },
+  "jsdelivr": "dist/x-notification.js"
 }
