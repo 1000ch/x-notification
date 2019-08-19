@@ -100,8 +100,8 @@ export default class XNotification extends HTMLElement {
     }
   }
 
-  show(): void {
-    this.delayTimerId = setTimeout(() => {
+  show() {
+    this.delayTimerId = window.setTimeout(() => {
       const dirs = ['auto', 'ltr', 'rtl'];
       const options: NotificationOptions = {
         dir: dirs.includes(this.dir) ? this.dir as NotificationDirection : undefined,
@@ -121,17 +121,17 @@ export default class XNotification extends HTMLElement {
     }, this.delay);
   }
 
-  close(): void {
+  close() {
     if (this.notification) {
       this.notification.close();
     }
 
     if (this.delayTimerId) {
-      clearTimeout(this.delayTimerId);
+      window.clearTimeout(this.delayTimerId);
     }
 
     if (this.timeoutTimerId) {
-      clearTimeout(this.timeoutTimerId);
+      window.clearTimeout(this.timeoutTimerId);
     }
   }
 }
