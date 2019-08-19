@@ -1,11 +1,10 @@
 {
   "name": "x-notification",
   "version": "2.0.2",
-  "description": "Declarative Browser Notifications as Web Components.",
+  "description": "Declarative Browser Notification as Web Components.",
   "keywords": [
-    "Notification",
-    "WebComponents",
-    "web-components"
+    "notification",
+    "webcomponents"
   ],
   "homepage": "https://github.com/1000ch/x-notification",
   "bugs": {

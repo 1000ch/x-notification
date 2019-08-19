@@ -1,6 +1,6 @@
 # `<x-notification>`  [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
 
-Declarative Browser Notifications as Web Components.
+Declarative Browser Notification as Web Components.
 
 ## Install
 
@@ -21,7 +21,7 @@ Import `x-notification.js` and register.
 </script>
 ```
 
-After loading, put `<x-notification>` tag.
+Put `<x-notification>` tag.
 
 ```html
 <x-notification autoshow title="Notification Title" delay="1000" timeout="3000" tag="tag">
