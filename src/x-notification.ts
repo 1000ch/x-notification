@@ -1,7 +1,7 @@
 export default class XNotification extends HTMLElement {
-  delayTimerId: number | undefined = undefined;
-  timeoutTimerId: number | undefined = undefined;
-  notification: Notification | null = null;
+  delayTimerId?: number = undefined;
+  timeoutTimerId?: number = undefined;
+  notification?: Notification = undefined;
 
   get tag(): string | undefined {
     if (this.hasAttribute('tag')) {
