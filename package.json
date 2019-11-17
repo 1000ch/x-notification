@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "terser": "^4.1.4",
-    "typescript": "^3.5.3",
+    "typescript": "^3.7.2",
     "xo": "^0.24.0"
   }
 }

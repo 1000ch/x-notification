@@ -83,21 +83,15 @@ export default class XNotification extends HTMLElement {
   }
 
   disconnectedCallback() {
-    if (this.notification) {
-      this.notification.close();
-    }
+    this.notification?.close();
   }
 
   addEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | AddEventListenerOptions) {
-    if (this.notification) {
-      this.notification.addEventListener(type, listener, useCapture);
-    }
+    this.notification?.addEventListener(type, listener, useCapture);
   }
 
   removeEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | EventListenerOptions) {
-    if (this.notification) {
-      this.notification.removeEventListener(type, listener, useCapture);
-    }
+    this.notification?.removeEventListener(type, listener, useCapture);
   }
 
   show() {
@@ -122,16 +116,8 @@ export default class XNotification extends HTMLElement {
   }
 
   close() {
-    if (this.notification) {
-      this.notification.close();
-    }
-
-    if (this.delayTimerId) {
-      window.clearTimeout(this.delayTimerId);
-    }
-
-    if (this.timeoutTimerId) {
-      window.clearTimeout(this.timeoutTimerId);
-    }
+    this.notification?.close();
+    window.clearTimeout(this.delayTimerId);
+    window.clearTimeout(this.timeoutTimerId);
   }
 }
