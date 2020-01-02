@@ -20,10 +20,10 @@
     "email": "shogosensui@gmail.com",
     "web": "https://github.com/1000ch"
   },
-  "module": "dist/x-notification.js",
+  "module": "dist/index.js",
   "scripts": {
-    "build": "tsc && terser --output dist/x-notification.js dist/x-notification.js",
-    "prepublishOnly": "npm run build",
+    "build": "tsc && terser --output dist/index.js dist/index.js",
+    "prepublish": "npm run build",
     "test": "xo"
   },
   "xo": {
