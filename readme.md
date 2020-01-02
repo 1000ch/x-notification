@@ -1,10 +1,14 @@
-# `<x-notification>`  [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
+# `<x-notification>`
 
-Declarative Browser Notification as Web Components.
+> Declarative Browser Notification as Web Components.
+
+[![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
+[![NPM version](https://badge.fury.io/js/x-notification.svg)](http://badge.fury.io/js/x-notification)
+[![devDependency Status](https://david-dm.org/1000ch/x-notification/dev-status.svg)](https://david-dm.org/1000ch/x-notification?type=dev)
 
 ## Install
 
-Via [npm](https://www.npmjs.org/package/x-notification):
+Using [npm](https://www.npmjs.org/package/x-notification):
 
 ```sh
 $ npm install x-notification
@@ -12,12 +16,12 @@ $ npm install x-notification
 
 ## Usage
 
-Import `x-notification.js` and register.
+Import `XNotification` and register it.
 
 ```html
 <script type="module">
-  import XNotification from './x-notification.js';
-  customElements.define('x-notification', XNotification);
+import XNotification from 'https://cdn.jsdelivr.net/npm/x-notification/dist/index.js';
+customElements.define('x-notification', XNotification);
 </script>
 ```
 
