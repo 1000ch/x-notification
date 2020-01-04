@@ -20,7 +20,7 @@ Import `XNotification` and register it.
 
 ```html
 <script type="module">
-import XNotification from 'https://cdn.jsdelivr.net/npm/x-notification/dist/index.js';
+import XNotification from 'https://unpkg.com/x-notification/dist/index.js';
 customElements.define('x-notification', XNotification);
 </script>
 ```
