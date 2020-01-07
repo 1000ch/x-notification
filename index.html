@@ -24,25 +24,16 @@
     </style>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script defer src="https://buttons.github.io/buttons.js"></script>
-    <script defer src="https://unpkg.com/github-corner/index.js"></script>
-    <script defer src="https://unpkg.com/prismjs/prism.js" data-manual></script>
+    <script defer src="https://unpkg.com/github-corner"></script>
     <script type="module">
-      import XMarked from 'https://unpkg.com/x-marked/dist/index.js';
-      import XNotification from 'https://unpkg.com/x-notification/dist/index.js';
+      import XMarked from 'https://unpkg.com/x-marked';
+      import XNotification from 'https://unpkg.com/x-notification';
+
       customElements.define('x-marked', XMarked);
       customElements.define('x-notification', XNotification);
 
       window.addEventListener('load', () => {
         const xmarked = document.querySelector('x-marked');
-        xmarked.shadowRoot.querySelectorAll('pre code').forEach(block => {
-          Prism.highlightElement(block);
-        });
-
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://unpkg.com/prism-themes/themes/prism-duotone-light.css';
-        xmarked.shadowRoot.appendChild(link);
-
         const div = document.querySelector('div');
         const h2 = xmarked.shadowRoot.querySelector('h2');
         xmarked.shadowRoot.querySelector('div').insertBefore(div, h2);
@@ -59,7 +50,7 @@
     <github-corner>
       <a href="https://github.com/1000ch/x-notification">GitHub</a>
     </github-corner>
-    <x-marked class="container">
+    <x-marked highlight class="container">
 # `<x-notification>`
 
 Declarative Browser Notification as Web Components.
@@ -92,7 +83,8 @@ Import `XNotification` and register it.
 
 ```html
 <script type="module">
-import XNotification from 'https://unpkg.com/x-notification/dist/index.js';
+import XNotification from 'https://unpkg.com/x-notification';
+
 customElements.define('x-notification', XNotification);
 </script>
 ```
