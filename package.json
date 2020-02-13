@@ -34,8 +34,8 @@
     "space": true
   },
   "devDependencies": {
-    "terser": "^4.4.3",
-    "typescript": "^3.7.4",
-    "xo": "^0.25.3"
+    "terser": "^4.6.3",
+    "typescript": "^3.7.5",
+    "xo": "^0.26.1"
   }
 }
