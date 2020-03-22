@@ -5,14 +5,14 @@ export default class XNotification extends HTMLElement {
 
   get tag(): string | undefined {
     if (this.hasAttribute('tag')) {
-      return this.getAttribute('tag') || undefined;
+      return this.getAttribute('tag') ?? undefined;
     }
 
     return undefined;
   }
 
   set tag(value: string | undefined) {
-    if (value == null) {
+    if (value === null || value === undefined) {
       this.removeAttribute('tag');
     } else {
       this.setAttribute('tag', value);
@@ -21,14 +21,14 @@ export default class XNotification extends HTMLElement {
 
   get icon(): string | undefined {
     if (this.hasAttribute('icon')) {
-      return this.getAttribute('icon') || undefined;
+      return this.getAttribute('icon') ?? undefined;
     }
 
     return undefined;
   }
 
   set icon(value: string | undefined) {
-    if (value == null) {
+    if (value === null || value === undefined) {
       this.removeAttribute('icon');
     } else {
       this.setAttribute('icon', value);
@@ -48,7 +48,7 @@ export default class XNotification extends HTMLElement {
   }
 
   set delay(value: number | undefined) {
-    if (value == null) {
+    if (value === null || value === undefined) {
       this.removeAttribute('delay');
     } else {
       this.setAttribute('delay', String(value));
@@ -64,7 +64,7 @@ export default class XNotification extends HTMLElement {
   }
 
   set timeout(value: number | undefined) {
-    if (value == null) {
+    if (value === null || value === undefined) {
       this.removeAttribute('timeout');
     } else {
       this.setAttribute('timeout', String(value));
@@ -76,31 +76,31 @@ export default class XNotification extends HTMLElement {
     this.style.display = 'none';
   }
 
-  connectedCallback() {
+  connectedCallback(): void {
     if (this.autoshow) {
       this.show();
     }
   }
 
-  disconnectedCallback() {
+  disconnectedCallback(): void {
     this.notification?.close();
   }
 
-  addEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | AddEventListenerOptions) {
+  addEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | AddEventListenerOptions): void {
     this.notification?.addEventListener(type, listener, useCapture);
   }
 
-  removeEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | EventListenerOptions) {
+  removeEventListener(type: string, listener: EventListenerOrEventListenerObject, useCapture: boolean | EventListenerOptions): void {
     this.notification?.removeEventListener(type, listener, useCapture);
   }
 
-  show() {
+  show(): void {
     this.delayTimerId = window.setTimeout(() => {
       const dirs = ['auto', 'ltr', 'rtl'];
       const options: NotificationOptions = {
         dir: dirs.includes(this.dir) ? this.dir as NotificationDirection : undefined,
         lang: this.lang,
-        body: this.textContent || undefined,
+        body: this.textContent ?? undefined,
         tag: this.tag,
         icon: this.icon
       };
@@ -115,7 +115,7 @@ export default class XNotification extends HTMLElement {
     }, this.delay);
   }
 
-  close() {
+  close(): void {
     this.notification?.close();
     window.clearTimeout(this.delayTimerId);
     window.clearTimeout(this.timeoutTimerId);
