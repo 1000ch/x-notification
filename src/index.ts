@@ -96,9 +96,9 @@ export default class XNotification extends HTMLElement {
 
   show(): void {
     this.delayTimerId = window.setTimeout(() => {
-      const dirs = ['auto', 'ltr', 'rtl'];
+      const dirs = new Set(['auto', 'ltr', 'rtl']);
       const options: NotificationOptions = {
-        dir: dirs.includes(this.dir) ? this.dir as NotificationDirection : undefined,
+        dir: dirs.has(this.dir) ? this.dir as NotificationDirection : undefined,
         lang: this.lang,
         body: this.textContent ?? undefined,
         tag: this.tag,
