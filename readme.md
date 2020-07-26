@@ -1,10 +1,6 @@
-# `<x-notification>`
+# x-notification [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification) [![devDependency Status](https://david-dm.org/1000ch/x-notification/dev-status.svg)](https://david-dm.org/1000ch/x-notification?type=dev)
 
 > Declarative Browser Notification as Web Components.
-
-[![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification)
-[![NPM version](https://badge.fury.io/js/x-notification.svg)](http://badge.fury.io/js/x-notification)
-[![devDependency Status](https://david-dm.org/1000ch/x-notification/dev-status.svg)](https://david-dm.org/1000ch/x-notification?type=dev)
 
 ## Install
 
