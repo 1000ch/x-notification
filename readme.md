@@ -1,4 +1,4 @@
-# x-notification [![Build Status](https://travis-ci.org/1000ch/x-notification.svg?branch=master)](https://travis-ci.org/1000ch/x-notification) [![devDependency Status](https://david-dm.org/1000ch/x-notification/dev-status.svg)](https://david-dm.org/1000ch/x-notification?type=dev)
+# x-notification ![GitHub Actions Status](https://github.com/1000ch/x-notification/workflows/test/badge.svg)
 
 > Declarative Browser Notification as Web Components.
 
