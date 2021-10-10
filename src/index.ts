@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export default class XNotification extends HTMLElement {
   delayTimerId?: number = undefined;
   timeoutTimerId?: number = undefined;
@@ -102,7 +103,7 @@ export default class XNotification extends HTMLElement {
         lang: this.lang,
         body: this.textContent ?? undefined,
         tag: this.tag,
-        icon: this.icon
+        icon: this.icon,
       };
 
       this.notification = new Notification(this.title, options);
